@@ -16,9 +16,7 @@ public class playerScript : MonoBehaviour
     public Camera cam;
 
     [SerializeField]
-    private float speed;
-    [SerializeField]
-    private float ySpeed;
+    private float speed, ySpeed;
 
     Vector3 posEnd, posSmooth, _jump;
 
@@ -73,8 +71,6 @@ public class playerScript : MonoBehaviour
     {
         Vector3 charector_vecJump = new Vector3(Charecter.transform.position.x, Charecter.transform.position.y + ySpeed * Time.deltaTime);
 
-        _jump = Vector3.Lerp(Charecter.transform.position, charector_vecJump, 0.05f);
-
-        Charecter.transform.position = _jump;
+        Charecter.transform.position = charector_vecJump;
     }
 }
